@@ -1,2 +1,2 @@
-# PW-IMC-JSP
-Calcular IMC com JSP
+# imc-jsp
+Implementação para calcular IMC com JSP.
