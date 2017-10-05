@@ -1,18 +1,20 @@
-package calc.controller;
-
-import calc.model.CalculandoImc;
+package mvc.controller;
+import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+
+import mvc.model.CalculandoImc;
 
 @WebServlet("/imc")
 public class IMCController extends HttpServlet {
 
-    @Override
+
+	@Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         double peso = Double.parseDouble(req.getParameter("peso"));
         if (peso < 1) {
@@ -29,8 +31,8 @@ public class IMCController extends HttpServlet {
 
         CalculandoImc resposta = new CalculandoImc();
         resposta.CalcImc(peso, altura, sexo);
-        req.setAttribute("resultadoImc", resposta.getResultadoImc());
-        req.setAttribute("messagem", resposta.getMessagem());
+        req.setAttribute("resultadoImc", resposta.getCalcImc());
+        req.setAttribute("messagem", resposta.getMensagem());
         req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 

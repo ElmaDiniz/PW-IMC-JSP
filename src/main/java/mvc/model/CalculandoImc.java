@@ -1,13 +1,13 @@
-package calc.model;
+package mvc.model;
 
 
 public class CalculandoImc{
 
-    private String messagem;
+    private String mensagem;
     private double resultadoImc;
 
     public CalculandoImc(){
-        this.messagem = "";
+        this.mensagem = "";
         this.resultadoImc = 0;
     }
 
@@ -17,36 +17,36 @@ public class CalculandoImc{
 
         mensagem = "";
         if (resultadoImc < 17) {
-            messagem = "Seu peso está muito abaixo do normal!";
+        	mensagem = "Seu peso está muito abaixo do normal!";
         }
         if (resultadoImc >= 17 && resultadoImc < 18.5) {
-            messagem = "Seu peso está abaixo do normal!";
+        	mensagem = "Seu peso está abaixo do normal!";
         }
         if (resultadoImc >= 18.5 && resultadoImc < 25) {
-            messagem = "Parabéns seu peso está normal!";
+        	mensagem = "Parabéns seu peso está normal!";
         }
         if (resultadoImc >= 25 && resultadoImc < 30) {
-            messagem = "Você está um pouco acima do peso!";
+        	mensagem = "Você está um pouco acima do peso!";
         }
         if (resultadoImc >= 30 && resultadoImc < 35) {
-            messagem = "Cuidado! Você está com obesidade I!";
+        	mensagem = "Cuidado! Você está com obesidade I!";
         }
         if (resultadoImc >= 35 && resultadoImc < 40) {
-            messagem = "Cuidado! Você está com obesidade II (severa)!";
+        	mensagem = "Cuidado! Você está com obesidade II (severa)!";
         }
         if (resultadoImc >= 40) {
-            messagem = "Cuidado! Você está com obesidade III (mórbida)!";
+        	mensagem = "Cuidado! Você está com obesidade III (mórbida)!";
         }
-        System.out.println("Seu ICM é igual a: " + resultadoImc + " E " + messagem);
+        System.out.println("Seu ICM é igual a: " + resultadoImc + " E " + mensagem);
 
     }
 
-    public String getMessagem() {
-        return messagem;
+    public String getMensagem() {
+        return mensagem;
     }
 
-    public void setMessagem(String messagem) {
-        this.messagem = messagem;
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
     }
 
     public double getCalcImc() {
